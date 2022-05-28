@@ -52,8 +52,12 @@ If the ‘A’ command follows the input actions, the program will compute and p
 First, the tree of all reachable board configurations starting from the current configuration (level 0) and of the requested depth is constructed; if the same board is reachable multiple times in the same tree, the corresponding tree node must be replicated. 
 
 <p width="100%" align="center">
-<img src="https://user-images.githubusercontent.com/94183388/170813516-9f950dc0-acfc-4640-8934-071eedd1a473.png" width="300" height="250">
+<img src="https://user-images.githubusercontent.com/94183388/170813516-9f950dc0-acfc-4640-8934-071eedd1a473.png" width="400" height="350">
 </p>
+
+ To compute the next action, your program should implement the minimax decision rule for the tree
+depth of three. Figure 2 exemplifies the rule for the board configuration in Figure 3a and the turn of black.
+
 
 <p width="100%" align="center">
 <img src="https://user-images.githubusercontent.com/94183388/170813270-2f7fc83a-ccbd-41f2-9d78-88b0e4db5d0e.png" width="800" height="550">
