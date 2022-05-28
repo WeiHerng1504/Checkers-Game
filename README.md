@@ -45,7 +45,7 @@ cost of a board is computed as b + 3B − w − 3W, where b, w, B, and W are, re
 
 If an illegal action is encountered in the input, the program will select and print one of six error messages. The program will terminate immediately after printing the error message.
 
-## Computing and printing next action
+## Computing and printing next action (stage 1)
 If the ‘A’ command follows the input actions, the program will compute and print the information about the next Action of the player with the turn. All of the Stage 0 output should be retained. To compute the next action, your program should implement the decision-making algorithm for the tree depth of three.
 
 ### Decision-making algorithm
