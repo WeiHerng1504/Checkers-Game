@@ -51,7 +51,7 @@ cost of a board is computed as b + 3B − w − 3W, where b, w, B, and W are, re
 If an illegal action is encountered in the input, the program will select and print one of six error messages. The program will terminate immediately after printing the error message.
 
 ## Computing and printing next action (stage 1)
-If the ‘A’ command follows the input actions, the program will compute and print the information about the next Action of the player with the turn. All of the Stage 0 output should be retained. To compute the next action, your program should implement the decision-making algorithm for the tree depth of three.
+If the ‘A’ command follows the input actions, the program will compute and print the information about the next Action of the player with the turn. All of the Stage 0 output should be retained. To compute the next action, the program will implement the decision-making algorithm for the tree depth of three. If the next action does not exist and, thus, cannot be computed, the player loses.
 
 ### Decision-making algorithm
 First, the tree of all reachable board configurations starting from the current configuration (level 0) and of the requested depth is constructed; if the same board is reachable multiple times in the same tree, the corresponding tree node must be replicated. 
@@ -74,3 +74,9 @@ Third, for each possible action of the player, we check all possible actions of 
 next action of the player to be the first action on the path from the root of the tree toward a leaf node for which the
 player maximizes their gain while the opponent (considered rational) aims to minimize the player’s gain; see the
 red path in Figure 2. 
+
+## Machine Games (stage 3)
+If the ‘P’ command follows the input actions, the program will play ten next actions or all actions until the
+end of the game, whatever comes first. The game should continue from the board that results after processing
+the Stage 0 input. If the game ends within the next ten turns (including the last turn when no action is possible),
+the winner should be reported. The computation of actions and winner reporting should follow the Stage 1 rules.
