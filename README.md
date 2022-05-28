@@ -33,7 +33,7 @@ jump forward and backward. The arrows in Figure 1d show all the legal captures f
 A player wins the game if it is the opponent’s turn and they cannot take action, move or capture,
 either because no their pieces and towers are left on the board or because no legal move or capture is possible.
 
-## Reading and printing 
+## Reading and printing (Stage 0)
 Initially, program reads input and prints the initial setup and all legal actions. 
 
 <p width="100%" align="center">
@@ -41,8 +41,24 @@ Initially, program reads input and prints the initial setup and all legal action
 </p>
 
 For example, lines 1–21 report the board configuration and specify the initial setup from Figure 1a. Characters ‘b’ and ‘w’ are used to denote black and white pieces, respectively. Then, lines 22–42 print the first move specified in the first line of the input. The output of each action starts with the delimiter line of 37 ‘=’ characters; see line 22. The next two lines print information about the action taken and the cost of the board; see lines 23 and 24. The
-cost of a board is computed as b + 3B − w − 3W, where b, w, B, and W are, respectively, the number of black
-pieces, white pieces, black towers, and white towers on the board; that is, a tower costs three pieces. Then, the program prints the board configuration that results from the action. 
+cost of a board is computed as b + 3B − w − 3W, where b, w, B, and W are, respectively, the number of black pieces, white pieces, black towers, and white towers on the board; that is, a tower costs three pieces. Then, the program prints the board configuration that results from the action. 
 
 If an illegal action is encountered in the input, the program will select and print one of six error messages. The program will terminate immediately after printing the error message.
+
+## Computing and printing next action
+If the ‘A’ command follows the input actions, the program will compute and print the information about the next Action of the player with the turn. All of the Stage 0 output should be retained. To compute the next action, your program should implement the decision-making algorithm for the tree depth of three.
+
+### Decision-making algorithm
+First, the tree of all reachable board configurations starting from the current configuration (level 0) and of the requested depth is constructed; if the same board is reachable multiple times in the same tree, the corresponding tree node must be replicated. 
+
+<p width="100%" align="center">
+<img src="https://user-images.githubusercontent.com/94183388/170813270-2f7fc83a-ccbd-41f2-9d78-88b0e4db5d0e.png" width="800" height="550">
+</p>
+
+For example, black can make two moves in Figure 3a: the tower at A6 can move
+to B5 (Figure 3b) and the piece at C8 can move to D7 (Figure 3c); see level 1 in Figure 2. The tree in Figure 2
+explicitly shows nodes that refer to 15 out of all 30 board configurations in the minimax tree of depth three for
+the black turn and the board from Figure 3a. The labels of the nodes refer to the corresponding boards shown
+in Figure 3. For instance, nodes with labels (f)–(h) at level 2 of the tree refer to the boards in Figures 3f to 3h,
+respectively, which are all the boards white can reach by making moves and captures in the board in Figure 3c.
 
