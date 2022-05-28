@@ -4,7 +4,7 @@
 Checkers, or draughts, is a strategy board game played by two players. There are many variants of checkers. This project implements a simple program that reads, prints, and plays a variant of the game. This project was a university assignment designed to test the understanding of dynamic memory and linked data structures and extend program design, testing, and debugging skills. It also serves as a glimpse into artificial Intelligence and tree search algorithms.
 
 <p width="100%" align="center">
-<img src="https://user-images.githubusercontent.com/94183388/170808819-352ab85e-ea8f-4ac0-800b-ebe8a330c0e1.png" width="800" height="200">
+<img src="https://user-images.githubusercontent.com/94183388/170808819-352ab85e-ea8f-4ac0-800b-ebe8a330c0e1.png" width="800" height="250">
 </p>
 
 ### Setup 
