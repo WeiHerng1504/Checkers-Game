@@ -9,18 +9,22 @@ Checkers, or draughts, is a strategy board game played by two players. There are
 
 ### Setup 
 An 8x8 chessboard with 12 black and 12 white pieces initially positioned as shown in Figure 1a.
+
 ### Gameplay
 Each player plays all pieces of the same color. Black open the game by making a move, then white
 make a move, and then players alternate their turns. In a single turn, the player either makes a move or capture.
 For example, the arrow in Figure 1a denotes an opening move of the black piece from cell G6 to cell F5.
+
 ### Moves
 A piece may move to an empty cell diagonally forward (toward the opponent; north for black and south
 for white) one square. The arrows in Figure 1b show all the legal moves of black and white pieces.
+
 ### Towers
 When a piece reaches the furthest row (the top row for black and the bottom row for white), it becomes
 a tower (a pile of pieces). The only move of the white piece at cell D7 in Figure 1b promotes it to the tower. A
 tower may move to an empty cell diagonally, both forward and backward, one square. The arrows in Figure 1c
 show all the legal moves of black and white towers.
+
 ### Captures
 To capture a piece or a tower of the opponent, a piece or a tower of the player jumps over it and lands
 in a straight diagonal line on the other side. This landing cell must be empty. When a piece or tower is captured,
@@ -29,6 +33,7 @@ the game, only one jump is allowed in a single turn. Hence, if another capture i
 cannot be taken in this turn. Also, in our variant of the game, if a player can make a move or a capture, they may
 decide which of the two to complete. A piece always jumps forward (toward the opponent), while a tower can
 jump forward and backward. The arrows in Figure 1d show all the legal captures for both players.
+
 ### Game end
 A player wins the game if it is the opponent’s turn and they cannot take action, move or capture,
 either because no their pieces and towers are left on the board or because no legal move or capture is possible.
@@ -55,8 +60,7 @@ First, the tree of all reachable board configurations starting from the current 
 <img src="https://user-images.githubusercontent.com/94183388/170813516-9f950dc0-acfc-4640-8934-071eedd1a473.png" width="600" height="350">
 </p>
 
- To compute the next action, your program should implement the minimax decision rule for the tree
-depth of three. Figure 2 exemplifies the rule for the board configuration in Figure 3a and the turn of black.
+To compute the next action, the program will implement the decision-making algorithmn for the tree depth of three. Figure 2 exemplifies the rule for the board configuration in Figure 3a and the turn of black.
 
 <p width="100%" align="center">
 <img src="https://user-images.githubusercontent.com/94183388/170813270-2f7fc83a-ccbd-41f2-9d78-88b0e4db5d0e.png" width="800" height="550">
@@ -64,11 +68,9 @@ depth of three. Figure 2 exemplifies the rule for the board configuration in Fig
 
 For example, black can make two moves in Figure 3a: the tower at A6 can move to B5 (Figure 3b) and the piece at C8 can move to D7 (Figure 3c); see level 1 in Figure 2. The tree in Figure 2 explicitly shows nodes that refer to 15 out of all 30 board configurations in the decision tree of depth three for the black turn and the board from Figure 3a. The labels of the nodes refer to the corresponding boards shown in Figure 3. For instance, nodes with labels (f)–(h) at level 2 of the tree refer to the boards in Figures 3f to 3h, respectively, which are all the boards white can reach by making moves and captures in the board in Figure 3c.
 
-Second, the cost of all leaf boards is computed; see the nodes highlighted with a gray background (level 3). For example, six board configurations at level 3 of the
-tree can be reached from the board in Figure 3d. The boards in Figures 3i and 3j
-have the cost of 3, while the four boards
-reachable via all moves of the tower at cell
-B5 in board (d), not shown in the figure,
-have the cost of 2. Intuitively, a positive
-cost suggests that black win, a negative
-cost tells that white win, and the magnitude of the cost indicates the advantage of one player over the other.
+Second, the cost of all leaf boards is computed; see the nodes highlighted with a gray background (level 3). 
+
+Third, for each possible action of the player, we check all possible actions of the opponent, and choose the
+next action of the player to be the first action on the path from the root of the tree toward a leaf node for which the
+player maximizes their gain while the opponent (considered rational) aims to minimize the player’s gain; see the
+red path in Figure 2. 
