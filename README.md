@@ -68,7 +68,7 @@ To compute the next action, the program will implement the decision-making algor
 
 For example, black can make two moves in Figure 3a: the tower at A6 can move to B5 (Figure 3b) and the piece at C8 can move to D7 (Figure 3c); see level 1 in Figure 2. The tree in Figure 2 explicitly shows nodes that refer to 15 out of all 30 board configurations in the decision tree of depth three for the black turn and the board from Figure 3a. The labels of the nodes refer to the corresponding boards shown in Figure 3. For instance, nodes with labels (f)–(h) at level 2 of the tree refer to the boards in Figures 3f to 3h, respectively, which are all the boards white can reach by making moves and captures in the board in Figure 3c.
 
-Second, the cost of all leaf boards is computed; see the nodes highlighted with a gray background (level 3). 
+Second, the cost of all leaf boards is computed; see the nodes highlighted with a gray background (Figure 2, level 3). 
 
 Third, for each possible action of the player, we check all possible actions of the opponent, and choose the
 next action of the player to be the first action on the path from the root of the tree toward a leaf node for which the
