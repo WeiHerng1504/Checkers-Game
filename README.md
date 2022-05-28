@@ -52,13 +52,20 @@ If the ‘A’ command follows the input actions, the program will compute and p
 First, the tree of all reachable board configurations starting from the current configuration (level 0) and of the requested depth is constructed; if the same board is reachable multiple times in the same tree, the corresponding tree node must be replicated. 
 
 <p width="100%" align="center">
+<img src="https://user-images.githubusercontent.com/94183388/170813516-9f950dc0-acfc-4640-8934-071eedd1a473.png" width="300" height="250">
+</p>
+
+<p width="100%" align="center">
 <img src="https://user-images.githubusercontent.com/94183388/170813270-2f7fc83a-ccbd-41f2-9d78-88b0e4db5d0e.png" width="800" height="550">
 </p>
 
-For example, black can make two moves in Figure 3a: the tower at A6 can move
-to B5 (Figure 3b) and the piece at C8 can move to D7 (Figure 3c); see level 1 in Figure 2. The tree in Figure 2
-explicitly shows nodes that refer to 15 out of all 30 board configurations in the minimax tree of depth three for
-the black turn and the board from Figure 3a. The labels of the nodes refer to the corresponding boards shown
-in Figure 3. For instance, nodes with labels (f)–(h) at level 2 of the tree refer to the boards in Figures 3f to 3h,
-respectively, which are all the boards white can reach by making moves and captures in the board in Figure 3c.
+For example, black can make two moves in Figure 3a: the tower at A6 can move to B5 (Figure 3b) and the piece at C8 can move to D7 (Figure 3c); see level 1 in Figure 2. The tree in Figure 2 explicitly shows nodes that refer to 15 out of all 30 board configurations in the decision tree of depth three for the black turn and the board from Figure 3a. The labels of the nodes refer to the corresponding boards shown in Figure 3. For instance, nodes with labels (f)–(h) at level 2 of the tree refer to the boards in Figures 3f to 3h, respectively, which are all the boards white can reach by making moves and captures in the board in Figure 3c.
 
+Second, the cost of all leaf boards is computed; see the nodes highlighted with a gray background (level 3). For example, six board configurations at level 3 of the
+tree can be reached from the board in Figure 3d. The boards in Figures 3i and 3j
+have the cost of 3, while the four boards
+reachable via all moves of the tower at cell
+B5 in board (d), not shown in the figure,
+have the cost of 2. Intuitively, a positive
+cost suggests that black win, a negative
+cost tells that white win, and the magnitude of the cost indicates the advantage of one player over the other.
