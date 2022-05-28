@@ -33,3 +33,16 @@ jump forward and backward. The arrows in Figure 1d show all the legal captures f
 A player wins the game if it is the opponent’s turn and they cannot take action, move or capture,
 either because no their pieces and towers are left on the board or because no legal move or capture is possible.
 
+## Reading and printing 
+Initially, program reads input and prints the initial setup and all legal actions. 
+
+<p width="100%" align="center">
+<img src="https://user-images.githubusercontent.com/94183388/170809411-23df207f-969d-4911-b6d9-d186bb11def9.png" width="800" height="250">
+</p>
+
+For example, lines 1–21 report the board configuration and specify the initial setup from Figure 1a. Characters ‘b’ and ‘w’ are used to denote black and white pieces, respectively. Then, lines 22–42 print the first move specified in the first line of the input. The output of each action starts with the delimiter line of 37 ‘=’ characters; see line 22. The next two lines print information about the action taken and the cost of the board; see lines 23 and 24. The
+cost of a board is computed as b + 3B − w − 3W, where b, w, B, and W are, respectively, the number of black
+pieces, white pieces, black towers, and white towers on the board; that is, a tower costs three pieces. Then, the program prints the board configuration that results from the action. 
+
+If an illegal action is encountered in the input, the program will select and print one of six error messages. The program will terminate immediately after printing the error message.
+
